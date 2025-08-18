@@ -2,10 +2,12 @@
 
 namespace Iquesters\Masterdata\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Iquesters\Masterdata\Constants\EntityStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\User;
 
 class MasterData extends Model
 {
