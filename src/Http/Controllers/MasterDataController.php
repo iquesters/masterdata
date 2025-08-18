@@ -40,7 +40,7 @@ class MasterDataController extends Controller
                 ->get();
             Log::debug('Master data fetched successfully', [
                 'count' => $masterData->count(),
-                'is_super_admin' => $isSuperAdmin
+                // 'is_super_admin' => $isSuperAdmin
             ]);
             return view('master_data.index', [
                 'masterData' => $masterData,
