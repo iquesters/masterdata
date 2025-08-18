@@ -42,7 +42,7 @@ class MasterDataController extends Controller
                 'count' => $masterData->count(),
                 // 'is_super_admin' => $isSuperAdmin
             ]);
-            return view('master_data.index', [
+            return view('masterdata::master_data.index', [
                 'masterData' => $masterData,
                 'selectedNode' => null,
                 'parentNode' => null,
@@ -66,7 +66,7 @@ class MasterDataController extends Controller
             $parentNode = $selectedNode->parent;
             $childNodes = $selectedNode->children;
 
-            return view('master_data.index', [
+            return view('masterdata::master_data.index', [
                 'masterData' => $masterData,
                 'selectedNode' => $selectedNode,
                 'parentNode' => $parentNode,
