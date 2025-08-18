@@ -17,23 +17,26 @@ class MasterDataController extends Controller
     {
         try {
             Log::info('Fetching all master data');
-            $user = Auth::user();
+            // $user = Auth::user();
 
-            $isSuperAdmin = false;
+            // $isSuperAdmin = false;
 
-            if (method_exists($user, 'hasRole')) {
-                $isSuperAdmin = $user->hasRole('super-admin');
-            } elseif (isset($user->is_admin) && $user->is_admin) {
-                $isSuperAdmin = true;
-            }
+            // if (method_exists($user, 'hasRole')) {
+            //     $isSuperAdmin = $user->hasRole('super-admin');
+            // } elseif (isset($user->is_admin) && $user->is_admin) {
+            //     $isSuperAdmin = true;
+            // }
 
-            $statuses = $isSuperAdmin
-                ? null // null means show all statuses
-                : [EntityStatus::ACTIVE, EntityStatus::INACTIVE];
+            // $statuses = $isSuperAdmin
+            //     ? null // null means show all statuses
+            //     : [EntityStatus::ACTIVE, EntityStatus::INACTIVE];
+            // $masterData = MasterData::with('metas')
+            //     ->when($statuses, function ($query, $statuses) {
+            //         return $query->whereIn('status', $statuses);
+            //     })
+            //     ->get();
             $masterData = MasterData::with('metas')
-                ->when($statuses, function ($query, $statuses) {
-                    return $query->whereIn('status', $statuses);
-                })
+                ->whereIn('status', [EntityStatus::ACTIVE, EntityStatus::INACTIVE])
                 ->get();
             Log::debug('Master data fetched successfully', [
                 'count' => $masterData->count(),
