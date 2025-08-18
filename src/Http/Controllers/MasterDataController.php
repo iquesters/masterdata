@@ -2,9 +2,9 @@
 
 namespace Iquesters\Masterdata\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Constants\EntityStatus;
-use App\Models\MasterData;
+use Illuminate\Routing\Controller;
+use Iquesters\Masterdata\Constants\EntityStatus;
+use Iquesters\Masterdata\Models\MasterData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;

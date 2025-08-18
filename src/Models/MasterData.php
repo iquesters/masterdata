@@ -2,7 +2,7 @@
 
 namespace Iquesters\Masterdata\Models;
 
-use App\Constants\EntityStatus;
+use Iquesters\Masterdata\Constants\EntityStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
