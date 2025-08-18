@@ -27,11 +27,6 @@
                 {{ session('error') }}
             </div>
             @endif
-            <div class="position-sticky p-2 bg-white ps-3 breadcrumbs">
-                @if(Breadcrumbs::exists())
-                {{ Breadcrumbs::render() }}
-                @endif
-            </div>
             @yield('content')
         </main>
     </div>
