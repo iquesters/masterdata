@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@if(View::exists(config('masterdata.layout')))
+    @extends(config('masterdata.layout'))
+@else
+    @extends('masterdata::layouts.package')
+@endif
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-2">
