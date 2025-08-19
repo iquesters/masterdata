@@ -19,9 +19,14 @@ class MasterDataController extends Controller
             Log::info('Fetching all master data');
 
             $isSuperAdmin = Auth::user()->hasRole('super-admin');
+            if (! $isSuperAdmin) {
+                return redirect()
+                ->back()
+                ->with('error', 'You dont have permission to access masterdata.');
+            }
             $statuses = $isSuperAdmin
-                ? null // null means show all statuses
-                : [EntityStatus::ACTIVE, EntityStatus::INACTIVE];
+                ? [EntityStatus::ACTIVE, EntityStatus::INACTIVE]
+                : null;
             $masterData = MasterData::with('metas')
                 ->when($statuses, function ($query, $statuses) {
                     return $query->whereIn('status', $statuses);
