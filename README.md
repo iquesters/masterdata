@@ -32,3 +32,8 @@ It provides models, migrations, controllers, routes, and seeders for handling ke
    ```bash
    composer require iquesters/masterdata:@dev
    ```
+5. Now add masterdata related table to your database, so run the command:
+
+    ```bash
+    php artisan migrate
+    ```
