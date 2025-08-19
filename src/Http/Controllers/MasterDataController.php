@@ -19,7 +19,8 @@ class MasterDataController extends Controller
             Log::info('Fetching all master data');
 
             $isSuperAdmin = Auth::user()->hasRole('super-admin');
-            if (! $isSuperAdmin) {
+            if (!$isSuperAdmin) {
+                Log::info('User is not a super admin', ['user_id' => Auth::user()->id]);
                 return redirect()
                 ->back()
                 ->with('error', 'You dont have permission to access masterdata.');
@@ -56,6 +57,13 @@ class MasterDataController extends Controller
     public function show(MasterData $master_datum)
     {
         try {
+            $isSuperAdmin = Auth::user()->hasRole('super-admin');
+            if (!$isSuperAdmin) {
+                Log::info('User is not a super admin', ['user_id' => Auth::user()->id]);
+                return redirect()
+                    ->back()
+                    ->with('error', 'You dont have permission to access masterdata.');
+            }
             $masterData = MasterData::with('metas')->get();
             $selectedNode = $master_datum;
             $parentNode = $selectedNode->parent;
