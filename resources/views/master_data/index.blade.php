@@ -88,21 +88,13 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-start gap-2">
-                        @include('components.inc-single-details', [
-                            'icon' => 'fas fa-fw fa-key',
-                            'label' => 'Key',
-                            'value' => $selectedNode->key ?? 'N/A'
-                        ])
+                        <span><i class="fas fa-fw fa-key"></i>Key: {{ $selectedNode->key ?? 'N/A' }}</span>
                         <span class="badge badge-{{ $selectedNode->status }}">
                             {{ ucfirst($selectedNode->status) }}
                         </span>
                     </div>
                     @if($selectedNode->value)
-                        @include('components.inc-single-details', [
-                            'icon' => 'fas fa-fw fa-tag',
-                            'label' => 'Value',
-                            'value' => $selectedNode->value ?? 'N/A'
-                        ])
+                        <span><i class="fas fa-fw fa-tag"></i>Value: {{ $selectedNode->value ?? 'N/A' }}</span>
                     @endif
                 </div>
 
