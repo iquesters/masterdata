@@ -23,7 +23,7 @@
         <div class="overflow-auto h-100 pe-3">
             <div class="tree" style="min-width: max-content;">
                 @foreach ($masterData->where('parent_id', 0) as $rootData)
-                    @include('components.inc-with-props.tree-items', [
+                    @include('masterdata::components.inc-with-props.tree-items', [
                         'data' => $rootData, 
                         'masterData' => $masterData, 
                         'level' => 0,

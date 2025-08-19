@@ -23,7 +23,7 @@
     @if($masterData->where('parent_id', $data->id)->count() > 0)
         <ul class="tree-item-children">
             @foreach($masterData->where('parent_id', $data->id) as $child)
-                @include('components.inc-with-props.tree-items', [
+                @include('masterdata::components.inc-with-props.tree-items', [
                     'data' => $child, 
                     'masterData' => $masterData, 
                     'level' => $level + 1,
