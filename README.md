@@ -1,5 +1,7 @@
 # Laravel Master Data Package Iquesters
 
+testing packagist webhook connection
+
 A reusable **Master Data Management** package for Laravel.
 It provides models, migrations, controllers, routes, and seeders for handling key–value based master data with meta support.
 
