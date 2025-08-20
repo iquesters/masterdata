@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="https://avatars.githubusercontent.com/u/7593318?s=200&v=4" alt="Iquesters Logo" width="200"/>
-</p>
-
-# Laravel Master Data Package – Iquesters
+# Laravel Master Data Package – Iquesters <img src="https://avatars.githubusercontent.com/u/7593318?s=200&v=4" alt="Iquesters Logo" width="40"/>
 
 A reusable **Master Data Management** package for Laravel.  
 It provides models, migrations, controllers, routes, and seeders for handling key–value based master data with meta support.
