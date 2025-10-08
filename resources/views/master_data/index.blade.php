@@ -1,4 +1,10 @@
-@extends(config('masterdata.layout'))
+@php
+    $layout = class_exists(\Iquesters\UserInterface\UserInterfaceServiceProvider::class)
+        ? 'userinterface::layouts.app'
+        : config('masterdata.layout');
+@endphp
+
+@extends($layout)
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-2">
