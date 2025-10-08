@@ -18,4 +18,11 @@ class MasterdataSeeder extends BaseModuleSeeder
             ]
         ]
     ];
+
+    protected array $permissions = [
+        'view-master_data',
+        'create-master_data',
+        'edit-master_data',
+        'delete-master_data'
+    ];
 }
