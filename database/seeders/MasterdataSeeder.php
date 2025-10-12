@@ -2,9 +2,9 @@
 
 namespace Iquesters\Masterdata\Database\Seeders;
 
-use Iquesters\Foundation\Database\Seeders\BaseModuleSeeder;
+use Iquesters\Foundation\Database\Seeders\BaseSeeder;
 
-class MasterdataSeeder extends BaseModuleSeeder
+class MasterdataSeeder extends BaseSeeder
 {
     protected string $moduleName = 'masterdata';
     protected string $description = 'masterdata module';
@@ -25,4 +25,13 @@ class MasterdataSeeder extends BaseModuleSeeder
         'edit-master_data',
         'delete-master_data'
     ];
+    
+    /**
+     * Implement abstract method from BaseSeeder
+     */
+    protected function seedCustom(): void
+    {
+        // Add custom seeding logic here if needed
+        // Leave empty if none
+    }
 }
