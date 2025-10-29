@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use Iquesters\Masterdata\Http\Controllers\MasterDataController;
+use Iquesters\Masterdata\config\MasterDataConf;
 
-Route::middleware(config('masterdata.middleware'))->group(function () {
+$conf = new MasterDataConf();
+// dd($conf->default_values->middlewares[0]);
+
+Route::middleware($conf->default_values->middlewares[0])->group(function () {
     Route::resource('master-data', MasterDataController::class)->parameters([
         'master-data' => 'master_datum'
     ]);

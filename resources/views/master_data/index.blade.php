@@ -1,7 +1,12 @@
 @php
+    use Iquesters\Foundation\Support\ConfProvider;
+    use Iquesters\Foundation\Enums\Module;
+    use Iquesters\UserManagement\Config\UserManagementKeys;
+    
     $layout = class_exists(\Iquesters\UserInterface\UserInterfaceServiceProvider::class)
-        ? 'userinterface::layouts.app'
-        : config('masterdata.layout');
+        ? ConfProvider::from(Module::USER_INFE)->app_layout
+        : ConfProvider::from(Module::MASTER_DATA)->layout;
+
 @endphp
 
 @extends($layout)
