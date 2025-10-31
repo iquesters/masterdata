@@ -5,14 +5,19 @@ namespace Iquesters\Masterdata;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Command;
 use Iquesters\Masterdata\Database\Seeders\MasterdataSeeder;
+use Iquesters\Foundation\Support\ConfProvider;
+use Iquesters\Foundation\Enums\Module as ModuleEnum;
+use Iquesters\Masterdata\config\MasterDataConf;
 
 class MasterDataServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/masterdata.php', 'masterdata');
+        ConfProvider::register(ModuleEnum::MASTER_DATA, MasterDataConf::class);
 
         $this->registerSeedCommand();
+
+
     }
 
     public function boot(): void
