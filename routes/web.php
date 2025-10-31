@@ -5,7 +5,6 @@ use Iquesters\Masterdata\Http\Controllers\MasterDataController;
 use Iquesters\Masterdata\config\MasterDataConf;
 
 $conf = new MasterDataConf();
-// dd($conf->default_values->middlewares[0]);
 
 Route::middleware($conf->default_values->middlewares[0])->group(function () {
     Route::resource('master-data', MasterDataController::class)->parameters([
